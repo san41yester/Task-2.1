@@ -6,6 +6,8 @@ contract Multiply {
 	// State variable storing the sum of arguments that were passed to function 'add',
 	uint public product = 1;
     uint constant max = 11;
+	uint constant min = 0;
+	
 
 	constructor() public {
 		// check that contract's public key is set
@@ -27,7 +29,8 @@ contract Multiply {
 
 	// Function that adds its argument to the state variable.
 	function Mul(uint value) public checkOwnerAndAccept {
-        require(value < max);
+        require(value < max );
+		require(value > min );
 		product = product*value;
         
 	}
